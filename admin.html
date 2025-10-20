@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — Car Rental</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">CR</div>
+        <h1>Admin Dashboard</h1>
+      </div>
+      <div class="controls">
+        <button class="btn secondary" id="backBtn">Back to Site</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h3>Manage Cars</h3>
+        <div id="adminCars" class="list"></div>
+        <button class="btn" id="addCar">Add Car</button>
+      </section>
+
+      <section style="margin-top:20px;">
+        <h3>All Bookings</h3>
+        <div id="adminBookings" class="list"></div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Car Rental Admin</footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Redirect back to user site
+    document.getElementById("backBtn").onclick = () => location.href = "index.html";
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Only load admin features
+    renderAdminDashboard();
+  </script>
+</body>
+</html>
